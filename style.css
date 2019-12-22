@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC|Indie+Flower|Permanent+Marker|Quicksand|Raleway|Righteous&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* button to up */
+
+#circle {
+  height: 70px;
+  width: 80px;
+  background-color: thistle;
+  position: fixed;
+  border-radius: 5px;
+  animation-name: circleAnim;
+  animation-duration: 2s;
+  box-shadow: 0 0 20px 1px black;
+  transition: transform 0.4s linear;
+}
+#up {
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: thistle;
+  transition: color 0.4s linear;
+  font-weight: 900;
+}
+@keyframes circleAnim {
+  0% {
+    transform: translatex(50vw);
+  }
+}
+#circle:hover {
+  transform: translateY(5px);
+}
+#circle:hover #up {
+  color: rgb(255, 145, 0);
+}
+
+/* nav bar */
+
+#navbar {
+  background-color: rgb(84, 90, 126);
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0 0 20px 0 black;
+}
+ul {
+  display: flex;
+  list-style: none;
+}
+ul a {
+  display: block;
+  color: rgb(253, 228, 205);
+  font-size: 20px;
+  border-right: 1px solid rgba(240, 210, 128, 0.425);
+  padding: 5px;
+  height: 33px;
+  margin: 5px 0 0 0;
+  text-decoration: none;
+  text-shadow: 3px 3px 7px black;
+}
+#last {
+  border-right: none;
+}
+ul a:hover {
+  color: aquamarine;
+}
+.code {
+  color: rgb(84, 90, 126);
+  text-shadow: none;
+  transition: color 0.4s linear;
+}
+ul a:hover .code {
+  color: rgb(247, 167, 64);
+}
+@media (max-width: 520px) {
+  #navbar {
+    height: 150px;
+    justify-content: center;
+    position: absolute;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  ul a {
+    border-bottom: 1px solid rgba(240, 210, 128, 0.425);
+    border-right: none;
+  }
+  #circle {
+    top: 140px;
+    height: 30px;
+    width: 40px;
+  }
+}
+
+/* welcome */
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: antiquewhite;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(61, 35, 35);
+  box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.616);
+}
+#welcome-section h1 {
+  display: block;
+  animation-name: h1anim;
+  animation-duration: 3s;
+  font-size: 50px;
+  text-shadow: 20px 10px 10px rgba(196, 195, 193, 0.185), 3px 3px 7px black;
+}
+#welcome-section h3 {
+  padding: 15px;
+  display: block;
+  font-style: italic;
+  font-size: 25px;
+  color: rgb(252, 93, 93);
+  text-shadow: 3px 3px 7px black;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  animation: shine 2s linear 1;
+  letter-spacing: 2px;
+}
+@keyframes shine {
+  0% {
+      letter-spacing: 5px;
+  }
+}
+
+@keyframes h1anim {
+  0% {
+    text-shadow: -20px 10px 10px rgba(255, 255, 255, 0.349);
+    transform: rotate3d(0, 1, 0, 70deg);
+  }
+}
+
+/* projects */
+
+#projects {
+  background-color: rgb(50, 37, 61);
+  text-align: center;
+  padding-bottom: 30px;
+  box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.616);
+}
+#projects h2 {
+  color: antiquewhite;
+  text-align: center;
+  padding-top: 60px;
+  text-shadow: 7px 7px 7px black;
+}
+#containerOfProjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 60px;
+  padding: 30px;
+  margin: 0 auto;
+}
+.project-tile {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+#showAll {
+  display: inline-block;
+  background-color: rgb(236, 125, 85);
+  padding: 7px 10px;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 0.623);
+  transition: 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.623);
+}
+#showAll a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-shadow: 3px 3px 7px black;
+  transition: 0.5s;
+}
+#showAll a:hover {
+  color: aqua;
+  letter-spacing: 1px;
+}
+#showAll:hover {
+  box-shadow: none;
+  transform: translateX(2px);
+  transform: translateY(2px);
+}
+
+/* certificates */
+
+#certificates {
+  background-color: rgb(30, 46, 46);
+  box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.616);
+}
+#certificates h2 {
+  color: antiquewhite;
+  text-align: center;
+  padding-top: 60px;
+  text-shadow: 7px 7px 7px black;
+}
+#containerOfCertificates img {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+}
+.certificate-tile {
+  display: block;
+  height: 100%;
+  width: 100%;
+  box-shadow: 15px 15px 0px 5px rgba(0, 0, 0, 0.6);
+  transition: 0.5s;
+  border-radius: 2px;
+}
+.certificate-tile:hover {
+  box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.6);
+}
+
+#containerOfCertificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 60px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+/* contacts */
+
+#contacts {
+  background-color: rgb(43, 54, 52);
+  padding-bottom: 50px;
+  text-align: center;
+  box-shadow: inset 0px 0px 7px 0px rgba(0, 0, 0, 0.616);
+}
+#contacts h2 {
+  color: antiquewhite;
+  text-align: center;
+  padding-top: 60px;
+  text-shadow: 7px 7px 7px black;
+}
+#containerOfContacts {
+  background-color: rgba(29, 29, 29, 0.575);
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: inset 0px 0px 7px 0px black;
+}
+#containerOfContacts a {
+  padding: 5px;
+  background-color: antiquewhite;
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.507);
+}
+#containerOfContacts a:hover {
+  transform: translateY(-15px);
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.7), 0px 10px 0px 0px rgba(0, 0, 0, 0.4),
+    0px 15px 0px 0px rgba(0, 0, 0, 0.3);
+  color: rgb(0, 81, 255);
+}
+#containerOfContacts a i {
+  font-size: 20px;
+}
